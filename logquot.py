@@ -11,15 +11,14 @@ def q2(x):
     return 2**e(x)
     
 
-print(q(1))
-print(q2(1))
-print(e(1))
+def calc_maxima(n: int):
+    m = -1
+    r = []
+    for i in range(n):
+        k = e(i)
+        if k > m:
+            m=k
+            r.append((i,2**m))
+    return r
 
-
-m = -1
-for i in range(100000000):
-    k = e(i)
-    if k > m:
-        m=k
-        print(f"{i:6d} {2**m}")
-
+print(calc_maxima(10))
